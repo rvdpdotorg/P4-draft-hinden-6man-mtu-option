@@ -17,10 +17,10 @@
 #include <core.p4>
 #include <v1model.p4>
 
-#include <ethernet.p4>
-#include <ipv4.p4>
-#include <ipv6.p4>
-#include <icmp6.p4>
+#include "ethernet.p4"
+#include "ipv4.p4"
+#include "ipv6.p4"
+#include "icmp6.p4"
 
 struct headers_t {
     ethernet_h ethernet;
