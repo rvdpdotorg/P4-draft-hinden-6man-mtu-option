@@ -37,4 +37,20 @@ header ipv6_h {
     ipv6_addr_t daddr;
 }
 
+header ipv6_hbh_option_h {
+    bit<8> nexthdr;
+    bit<8> length;
+}
+
+header ipv6_hbh_type_h {
+    bit<8> type;
+}
+
+header ipv6_hbh_pmtu_h {
+    bit<8> length;
+    bit<16> value1;
+    bit<1> respond_flag;
+    bit<15> value2;
+}
+
 #endif  /* _IPV6_P4_ */
