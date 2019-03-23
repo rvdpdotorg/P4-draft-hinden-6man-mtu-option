@@ -1,0 +1,6 @@
+*.log
+*.pcap
+*.pyc
+*.swp
+*.json
+*.p4i
