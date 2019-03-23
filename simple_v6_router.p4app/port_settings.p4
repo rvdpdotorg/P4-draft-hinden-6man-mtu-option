@@ -32,7 +32,7 @@ control port_settings_ctrl(
 
     table port_settings {
         key = {
-            standard_metadata.egress_spec: exact;
+            standard_metadata.egress_port: exact;
         }
         actions = {
             save_port_settings;

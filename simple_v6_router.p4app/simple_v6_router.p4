@@ -128,10 +128,8 @@ control egress<H, M>(
         port_settings.apply(metadata, standard_metadata);
         if (hdr.ipv6.isValid()) {
             if (hdr.ipv6_hbh_pmtu.isValid()) {
-                if ((metadata.port_mtu / 2) <
-                            (bit<16>)hdr.ipv6_hbh_pmtu.value2) {
-                    hdr.ipv6_hbh_pmtu.value2 =
-                            (bit<15>)(metadata.port_mtu / 2);
+                if (metadata.port_mtu < hdr.ipv6_hbh_pmtu.value1) {
+                    hdr.ipv6_hbh_pmtu.value1 = metadata.port_mtu;
                 }
             }
         }
